@@ -1,4 +1,67 @@
+body {
+  background-color: #fffdef;
+}
+
+.icons {
+  color: coral;
+  font-size: 20px;
+}
+.icons:hover {
+  color: mediumblue;
+  font-size: 25px;
+}
+
+.day {
+  color: black;
+  cursor: pointer;
+}
+
+.today {
+  color: blue;
+  font-size: 80px;
+  cursor: pointer;
+}
+.today:hover {
+  color: coral;
+}
+.rounded-pill {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 35px 10px;
+  margin: 20px;
+  border-width: 1px;
+  border-widths: 4px;
+  border-style: solid;
+  border-color: gray-300;
+  border-color-translucent: rgba(black, 0.175);
+  border-radius-2xl: 2rem;
+}
 h1 {
   color: blue;
-  text-align: center;
+  font-size: 50px;
+  padding: 20px 0;
+  cursor: pointer;
+}
+h1:hover {
+  color: coral;
+}
+.col {
+  color: blue;
+  padding: 20px 0 0 0;
+  cursor: pointer;
+}
+.col:hover {
+  color: coral;
+}
+.now {
+  margin: 0px 0 100px 0;
+}
+.temperatureToday {
+  color: blue;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+#celcius:hover {
+  color: coral;
 }
