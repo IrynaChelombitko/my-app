@@ -30,11 +30,8 @@ body {
   padding: 35px 10px;
   margin: 20px;
   border-width: 1px;
-  border-widths: 4px;
   border-style: solid;
   border-color: gray-300;
-  border-color-translucent: rgba(black, 0.175);
-  border-radius-2xl: 2rem;
 }
 h1 {
   color: blue;
