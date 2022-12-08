@@ -81,6 +81,11 @@ function showTemperature(response) {
   )} km/h`;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `humidity ${response.data.main.humidity} %`;
+  let icontyElement = document.querySelector("#icon");
+  icontyElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/10d@2x.png`
+  );
 }
 
 function showPosition(position) {
