@@ -81,12 +81,12 @@ function showTemperature(response) {
   )} km/h`;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `humidity ${response.data.main.humidity} %`;
-  let icontyElement = document.querySelector("#icon");
-  icontyElement.setAttribute(
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${esponse.data.weather[0].icon}@2x.png`
   );
-  icontyElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showPosition(position) {
