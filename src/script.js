@@ -84,7 +84,7 @@ function showTemperature(response) {
   let icontyElement = document.querySelector("#icon");
   icontyElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/10d@2x.png`
+    `http://openweathermap.org/img/wn/${esponse.data.weather[0].icon}@2x.png`
   );
 }
 
