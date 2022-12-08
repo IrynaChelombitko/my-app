@@ -63,7 +63,7 @@ let form = document.querySelector(".search-form");
 form.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
-  console.log();
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   let message = `${temperature}`;
