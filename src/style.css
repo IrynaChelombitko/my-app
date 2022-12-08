@@ -54,11 +54,14 @@ h1:hover {
   margin: 0px 0 100px 0;
 }
 .temperatureToday {
-  color: blue;
+  color: coral;
   font-size: 50px;
   cursor: pointer;
 }
 
 #celcius:hover {
-  color: coral;
+  color: blue;
+}
+#fahrenheit:hover {
+  color: blue;
 }
