@@ -48,6 +48,12 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+fahrenheitLink.addEventListener("click", displayCelsiusTemperature);
+
 function searchCity(event) {
   event.preventDefault();
   let heading = document.querySelector("h1");
