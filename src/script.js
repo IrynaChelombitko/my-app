@@ -83,11 +83,11 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `wind speed ${Math.round(
+  windElement.innerHTML = `wind speed: ${Math.round(
     response.data.wind.speed
   )} km/h`;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `humidity ${response.data.main.humidity} %`;
+  humidityElement.innerHTML = `humidity: ${response.data.main.humidity} %`;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
