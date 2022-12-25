@@ -70,6 +70,12 @@ function searchCity(event) {
 }
 
 function displayTemperature(response) {
+  console.log(response.data);
+  let city = response.data.name;
+
+  let cityCurrent = `${city}`;
+  h1.innerHTML = cityCurrent;
+
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("h1");
   let descriptionElement = document.querySelector("#description");
