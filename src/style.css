@@ -11,7 +11,7 @@ h1 {
   margin-bottom: 0;
 }
 
-container {
+.container {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
