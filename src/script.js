@@ -68,28 +68,23 @@ function searchCity(event) {
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", searchCity);
 
-function showTemperature(response) {
-  console.log(response.data);
-
-  let city = response.data.name;
-
+function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("h1");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  let cityCurrent = `${city}`;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = cityCurrent;
-  let descriptionElement = document.querySelector("#description");
+  cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  let windElement = document.querySelector("#wind");
-  windElement.innerHTML = `wind speed ${Math.round(
-    response.data.wind.speed
-  )} km/h`;
-  let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `humidity ${response.data.main.humidity} %`;
-  let iconElement = document.querySelector("#icon");
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
