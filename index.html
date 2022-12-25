@@ -1,86 +1,104 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Parcel Sandbox</title>
-		<meta charset="UTF-8" />
-	
-		<link href="src/style.css" rel="stylesheet" type="text/css" />
-   
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-			crossorigin="anonymous"
-		/>
-		<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-	</head>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
 
-	<body>
-        <div class="weather-app">
-            <div class="container-weather-app">
-                <div class="row">
-                    <div class="col">
-                        Kharkiv
-                    </div>
-                    <div class="col">
-                        Odesa
-                    </div>
-                    <div class="col">
-                        Lviv
-                    </div>
-                    <div class="col">
-                        Ivano-Frankivsk
-                    </div>
-                </div>
-                <br/>   
-                <form class="search-form">
-                        <div class="row">
-                                <div class="col-6">
-                                    <input type="text" placeholder="Enter a city" autofocus="on" autocomplete="off" id="city-input" class="form-control shadow-sm">
-                                </div>
-                                <div class="col-3">
-                                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm w-100">
-                                </div>
-                                <div class="col-3">
-                                    <button class="btn btn-success w-100" id="current-location-button">
-                                        Current
-                                    </button>
-                                </div>
-                            </div>
-                        </form>        
-                <div class="now">
-                <h1>Kyiv</h1>
-                    <p id="time"> Friday 10:30
-                        <br/>
-                            Clear</p>
-                            <span class="today" ><img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear" id="icon" class="float-left" /></span>
-                            <strong class="today" id="temperature"></strong>
-                            <span class="temperatureToday">
-                                <span class="units"
-                    ><a href="#" id="celsius-link" class="active">°C</a> |
-                    <a href="#" id="fahrenheit-link" >°F</a></span>
-                            </span>
-                                <br/>
-                            <div class="current-conditions-group">
-                <div class="row">
-                                    <div class="col-4" id="description">mostly cloudy</div>
-                    <div class="col-4" id="wind">wind speed:<br />11km/h</div>
-                    <div class="col-4" id="humidity">humidity:<br />78%</div>
-                    </div>
-                    <div class="weather-forecast" id="forecast"></div>
-                    </div>
-                </div>
-                </div>  
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="weather-app">
+      <div class="container-weather-app">
+        <div class="row">
+          <div class="col">Kharkiv</div>
+          <div class="col">Odesa</div>
+          <div class="col">Lviv</div>
+          <div class="col">Ivano-Frankivsk</div>
+        </div>
+        <br />
+        <form class="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="Enter a city"
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
             </div>
-            <span> <a href="https://github.com/IrynaChelombitko/my-app"> Open-sourse code </a> by Iryna Chelombitko</span>
-        </div>    
-        
-		<script src="src/script.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-			crossorigin="anonymous"
-		></script>
-	</body>
-</html>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm w-100"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="now">
+          <h1>Kyiv</h1>
+          <p id="time">
+            Friday 10:30
+            <br />
+            Clear
+          </p>
+          <span class="today"
+            ><img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="Clear"
+              id="icon"
+              class="float-left"
+          /></span>
+          <strong class="today" id="temperature"></strong>
+          <span class="temperatureToday">
+            <span class="units"
+              ><a href="#" id="celsius-link" class="active">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a></span
+            >
+          </span>
+          <br />
+          <div class="current-conditions-group">
+            <div class="row">
+              <div class="col-4" id="description">mostly cloudy</div>
+              <div class="col-4" id="wind">wind speed:<br />11km/h</div>
+              <div class="col-4" id="humidity">humidity:<br />78%</div>
+            </div>
+            <div class="weather-forecast" id="forecast"></div>
+          </div>
+        </div>
+      </div>
+      <span>
+        <a href="https://github.com/IrynaChelombitko/my-app">
+          Open-sourse code
+        </a>
+        by Iryna Chelombitko</span
+      >
+    </div>
 
+    <script src="src/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
