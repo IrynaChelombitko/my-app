@@ -71,14 +71,12 @@ function searchCity(event) {
 
 function showTemperature(response) {
   console.log();
-
+  let temperatureElement = document.querySelector("#temperature");
   celsiusTemperature = response.data.main.temp;
-  let temperature = Math.round(celsiusTemperature);
-  let city = response.data.name;
-  let message = `${temperature}`;
-  let temp = document.querySelector("#temperature");
-  temp.innerHTML = message;
 
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let city = response.data.name;
   let cityCurrent = `${city}`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = cityCurrent;
