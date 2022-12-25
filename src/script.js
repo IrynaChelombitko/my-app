@@ -48,6 +48,9 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
+let form = document.querySelector(".search-form");
+form.addEventListener("submit", searchCity);
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
@@ -65,8 +68,6 @@ function searchCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
-let form = document.querySelector(".search-form");
-form.addEventListener("submit", searchCity);
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -113,3 +114,5 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 let searchForm = document.querySelector("#city-input");
 searchForm.addEventListener("submit", searchCity);
+
+search("New York");
