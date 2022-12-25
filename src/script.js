@@ -36,7 +36,6 @@ function displayFahrenheitTemperature(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
-  let celsiusTemperature = null;
 }
 
 function displayCelsiusTemperature(event) {
@@ -46,6 +45,8 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", searchCity);
