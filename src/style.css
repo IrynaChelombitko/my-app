@@ -65,3 +65,18 @@ h1:hover {
 #fahrenheit:hover {
   color: blue;
 }
+
+.temperatureToday .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+.temperatureToday .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.temperatureToday .active:hover {
+  text-decoration: none;
+}
