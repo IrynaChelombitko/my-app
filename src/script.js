@@ -70,8 +70,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "85bbd3d16a2dfe0ecf253c7ae1e8fe03db0aoa813de01aaeba8413bf9t52ff39";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={key}`;
+  let apiKey = "ddab274f9388f181c85037de8fd70061";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(displayForecast);
 }
@@ -179,4 +179,5 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
+
 displayForecast();
