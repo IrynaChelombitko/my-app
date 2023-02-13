@@ -183,3 +183,4 @@ function handleSubmit(event) {
 }
 
 displayForecast();
+search("Kyiv");
