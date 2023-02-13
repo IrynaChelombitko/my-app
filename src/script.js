@@ -72,7 +72,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "ddab274f9388f181c85037de8fd70061";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${APIkey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${APIkey}&units=metric`;
   
   axios.get(apiUrl).then(displayForecast);
 }
@@ -183,4 +183,4 @@ function handleSubmit(event) {
 }
 
 displayForecast();
-search("Kyiv");
+search("Kiyv");
