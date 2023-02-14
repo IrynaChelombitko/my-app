@@ -71,7 +71,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "ddab274f9388f181c85037de8fd70061";
+  let apiKey = "215576bab28022db35e6e64f040e1b56";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   
   axios.get(apiUrl).then(displayForecast);
@@ -105,7 +105,7 @@ function displayCelsiusTemperature(event) {
 let celsiusTemperature = null;
 
 let form = document.querySelector(".search-form");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleCity);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
@@ -113,16 +113,17 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-function searchCity(event) {
-  event.preventDefault();
-  let heading = document.querySelector("h1");
-  let nameCity = document.querySelector(".form-control");
-  heading.innerHTML = `${nameCity.value}`;
+function searchCity(city){
   let units = "metric";
   let apiKey = "ddab274f9388f181c85037de8fd70061";
-  let city = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
+}
+
+function handleCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city)
 }
 
 function showTemperature(response) {
@@ -131,7 +132,8 @@ function showTemperature(response) {
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
+  let heading = document.querySelector("h1");
+  heading.innerHTML = response.data.name;
   let city = response.data.name;
   let cityCurrent = `${city}`;
   let h1 = document.querySelector("h1");
@@ -174,7 +176,7 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentPosition);
 
 let searchForm = document.querySelector("#city-input");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", handleCity);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -182,5 +184,4 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-displayForecast();
-search("Kiyv");
+searchCity("Kiev");
